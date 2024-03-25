@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDFC</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: arial;
+        background-color: #f3f3f3;
+    }
+
+    .nav-body {
+        background-color: rgba(59, 83, 111, 1);
+        padding: 6px;
+        display: grid;
+        grid-template-columns: 2fr 8fr 2fr;
+    }
+
+
+    .navbar-image {
+        height: 22px;
+        width: 110px;
+        margin-bottom: -5px;
+    }
+
+    .navbar-sub-content {
+        font-size: 10px;
+        margin-left: 10px;
+
+    }
+
+    .navbar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        padding-left: 10px;
+        padding-right: 27px;
+    }
+
+    .navbar-sub-content-sub {
+        font-size: 8px;
+        margin-left: 10px;
+    }
+
+    .map {
+        padding: 2px;
+        border-radius: 50%;
+        background-color: rgb(40, 61, 85);
+        font-size: 8px;
+        margin-right: 3px;
+        color: #b5b0b0;
+    }
+
+    .question {
+        padding: 2px;
+        border-radius: 50%;
+        background-color: rgb(40, 61, 85);
+        font-size: 8px;
+        margin-right: 3px;
+        color: #b5b0b0;
+    }
+
+    .nav-input-body {
+        background-color: #fff;
+        padding: 6px;
+        display: grid;
+        grid-template-columns: 2fr 8fr 2fr;
+        box-shadow: 0 0 2px 2px rgb(223, 216, 216);
+    }
+
+    /* .input-search {
+        width: 300px;
+        font-size: 10px;
+    } */
+
+    .btn-nav {
+        background-color: #1d86ff;
+        color: #fff;
+        border: none;
+        font-size: 10px;
+        padding: 3px 5px;
+        border-radius: 5px;
+    }
+
+    .nav-input {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 27px;
+    }
+
+    .nav-input-contener {
+        border: 1px solid rgb(181, 175, 175);
+        border-radius: 3px;
+        padding-left: 10px;
+        height: 25px;
+        width: 450px;
+        position: relative;
+    }
+
+    .input-box {
+        border: none;
+        font-size: 11px;
+    }
+
+    .input-serch-icon {
+        font-size: 10px;
+        color: red;
+
+    }
+
+    .input-microphone-icon {
+        font-size: 10px;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 50%;
+        background-color: #e3f4ff;
+        position: absolute;
+        top: 3px;
+        right: 5px;
+    }
+
+    .nav-input-title {
+        font-size: 12px;
+        color: rgb(82, 179, 179);
+    }
+
+    .article-main {
+        /* background-color: rgba(59, 83, 111, 1); */
+        padding: 6px;
+        display: grid;
+        grid-template-columns: 2fr 8fr 2fr;
+    }
+
+    .article-image {
+        height: 200px;
+    }
+
+    .article-title {
+        font-size: 12px;
+        font-weight: 400;
+        display: block;
+    }
+
+    .article-title~span {
+        font-weight: 600;
+        font-size: 12px;
+        margin-top: -5px;
+        display: block;
+    }
+
+    .article-contener {
+        display: flex;
+
+    }
+
+    .article-title-contener {
+        border: 1px solid rgb(223, 214, 214);
+        margin-left: 7px;
+        padding: 9px;
+        background-color: #fff;
+        height: fit-content;
+        margin-bottom: 10px;
+    }
+
+    .article-select-contener {
+        font-size: 11px;
+        padding: 3px;
+        width: 100%;
+        border: #e6dbdb solid 1px;
+        border-radius: 2px;
+        margin-bottom: 3px;
+    }
+
+    .btn-article-appay {
+        text-align: center;
+        font-size: 12px;
+        color: #fff;
+        background-color: #d6cfcf;
+        width: 100%;
+        border: none;
+        border-radius: 2px;
+        padding: 3px 0;
+    }
+
+    .btn-article-know {
+        text-align: center;
+        font-size: 12px;
+        color: #bab7b7;
+        width: 100%;
+        background-color: #fff;
+        border: none;
+        padding: 3px 0;
+    }
+
+    .article-last-box-title {
+        font-size: 14px;
+        font-weight: 700;
+        display: block;
+        color: #0202d4;
+        padding-top: 0px;
+        display: block;
+    }
+
+    .article-last-box-sub-title {
+        font-size: 10px;
+        padding-top: 0px;
+        display: block;
+    }
+
+    .marquee-contener {
+        align-items: center;
+        padding-top: 4px;
+        display: grid;
+        grid-template-columns: 2fr 8fr 2fr;
+        background-color: #6db1ff;
+        color: #fff;
+        font-size: 11px;
+    }
+
+    .main-contener {
+        background-color: #234168;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 2fr 8fr 2fr;
+        padding: 1px 20px;
+
+    }
+
+    .main-sub-contener {
+        display: grid;
+        grid-template-columns: 1.7fr 1.7fr 1.7fr 1.7fr 1.7fr 1.7fr 1.7fr;
+        border-right: 1px solid #7a7676;
+        color: #a5a0a0;
+        text-align: center;
+    }
+
+    .main-title {
+        border-left: 1px solid #7a7474;
+    }
+    .main-img{
+        height: 20px;
+        display: block;
+        margin:2px auto ;
+    }
+    .main-title-sub{
+        font-size: 12px;
+        display: block;
+        margin-bottom: 1px;
+    }
+    .main-title-sub~span{
+        font-size: 9px;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .main-home{
+        background-color: #002759;
+    }
+
+    .main-head-title{
+       
+        height: 100px;
+        display: grid;
+        grid-template-columns: 2fr 8fr 2fr;
+        padding: 1px 1px;
+    }
+    .main-head-title-sub{
+        display: grid;
+        grid-template-columns: 5.9fr 3fr 3fr;
+       
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-body">
+                <div></div>
+                <div class="navbar-content">
+                    <div>
+                        <img src="../image/navbar-image.png" alt="navbar-image" class="navbar-image">
+                        <span class="navbar-sub-content">Personal </span>
+                        <span class="navbar-sub-content"> NRI</span>
+                        <span class="navbar-sub-content"> SME</span>
+                        <span class="navbar-sub-content">Wholesale</span>
+                        <span class="navbar-sub-content"> Agri</span>
+                    </div>
+                    <div>
+                        <span class="navbar-sub-content-sub "> <i class="bi bi-geo-alt map"></i>Locate us</span>
+                        <span class="navbar-sub-content-sub "><i class="bi bi-question-lg question"></i>Blog</span>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+            <div class="nav-input-body">
+                <div></div>
+                <div class="nav-input">
+                    <div><span class="nav-input-title">Welcome!</span></div>
+                    <div class="nav-input-contener">
+                        <span class=" bi bi-search input-serch-icon"></span>
+                        <input type="text" class="input-box" placeholder="What are you looking for ...">
+                        <span> <i class="bi bi-mic-fill input-microphone-icon "></i></span>
+                    </div>
+                    <div>
+                        <button class="btn-nav">LOGIN <span class="bi bi-chevron-down"></span> </button>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+    <article>
+        <div class="article-main">
+            <div></div>
+
+            <div class="article-contener">
+                <div>
+                    <img src="../image/artical.png" alt="article image" class="article-image">
+                </div>
+                <div>
+                    <div class="article-title-contener">
+                        <span class="article-title">Personal Banking Services</span>
+                        <span> What Are You Looking For?</span>
+                        <div>
+                            <select class="article-select-contener">
+                                <option>Select Product Type</option>
+                                <option>Cards</option>
+                                <option>Accounts</option>
+                                <option>Deposits</option>
+                                <option>Loans</option>
+                                <option>EMI</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="article-select-contener">
+                                <option>Select Product Type</option>
+                                <option>Cards</option>
+                                <option>Accounts</option>
+                                <option>Deposits</option>
+                                <option>Loans</option>
+                                <option>EMI</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button class="btn-article-appay">APPAY ONLINE</button>
+                        </div>
+                        <div>
+                            <button class="btn-article-know">Know More</button>
+                        </div>
+                    </div>
+                    <div class="article-title-contener">
+                        <span class="article-last-box-title">PayZapp</span>
+                        <span class="article-last-box-sub-title">Pay Your Way!​​​​</span>
+                    </div>
+                </div>
+            </div>
+
+            <div></div>
+        </div>
+        <div class="marquee-contener">
+            <div></div>
+            <div>
+                <marquee behavior="20" direction="">Basis RBI Circular No. DOR.LEG.REC/40/09.07.005/2021-22 dated 18th
+                    August 2021 and RBI/2022-23/168 CO.CEPD.PRS.No.S1233/13-01-018/2022-2023 dated January 23, 2023, it
+                    is mandatory to collect the revised agreement from all locker customers FD Rate Change Alert: Enjoy
+                    FD Rate of 7.25%*p.a. for tenure 18 to 21 Months. For Sr. Citizens, get 0.50%*p.a. extra! Hurry!
+                    Limited Period Rates for FD Amt. 5Cr The future of banking is HDFC Bank NOW. Experience
+                    NOW</marquee>
+            </div>
+            <div></div>
+        </div>
+
+
+    </article>
+    <main>
+        <div class="main-contener">
+            <div></div>
+            <div class="main-sub-contener">
+                <div class="main-title main-home">
+                    <img src="../image/article-two.png" alt="home" class="main-img">
+                    <span class="main-title-sub ">HOME</span>
+                </div>
+                <div class="main-title">
+                    <img src="../image/article-one.png" alt="" class="main-img">
+                    <span class="main-title-sub">PAY</span>
+                    <span>Cards, Bill Pay</span>
+                </div>
+                <div class="main-title">
+                    <img src="../image/article-three.png" alt="" class="main-img">
+                    <span class="main-title-sub">SAVE</span>
+                    <span> Accounts, Deposits</span>
+                </div>
+                <div class="main-title">
+                    <img src="../image/article-four.png" alt="" class="main-img">
+                    <span class="main-title-sub">INVEST</span>
+                    <span>Bonds, Mutual Funds</span>
+                </div>
+                <div class="main-title">
+                    <img src="../image/article-five.png" alt="" class="main-img">
+                    <span class="main-title-sub">BORROW</span>
+                    <span>Loans, EMI</span>
+                </div>
+                <div class="main-title">
+                    <img src="../image/article-six.png" alt="" class="main-img">
+                    <span class="main-title-sub">INSURE</span>
+                    <span>Cover, Protect</span>
+                </div>
+                <div class="main-title">
+                    <img src="../image/article-seven.png" alt="" class="main-img">
+                    <span class="main-title-sub">SHOP</span>
+                    <span>Offers, Discounts</span>
+                </div>
+            </div>
+            <div></div>
+        </div>
+
+        <div class="main-head-title">
+            <div></div>
+            <div class="main-head-title-sub">
+                <div> <span>Calculators For Your Needs</span></div>
+                <div><span>Offers for You</span></div>
+                <div><span>Need Help?</span></div>
+            </div>
+            <div></div>
+        </div>
+    </main>
+</body>
+
+</html>
